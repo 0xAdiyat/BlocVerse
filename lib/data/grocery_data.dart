@@ -1,0 +1,86 @@
+class GroceryData {
+  GroceryData._(); // Private constructor to prevent instantiation
+
+  static List<Map<String, dynamic>> groceryProducts = [
+    {
+      'id': 1,
+      'name': 'Apple',
+      'category': 'Fruits',
+      'price': 1.99,
+      'quantity': 50,
+      'imageUrl': 'https://example.com/apple.jpg',
+    },
+    {
+      'id': 2,
+      'name': 'Banana',
+      'category': 'Fruits',
+      'price': 0.79,
+      'quantity': 75,
+      'imageUrl': 'https://example.com/banana.jpg',
+    },
+    {
+      'id': 3,
+      'name': 'Milk',
+      'category': 'Dairy',
+      'price': 2.49,
+      'quantity': 30,
+      'imageUrl': 'https://example.com/milk.jpg',
+    },
+    {
+      'id': 4,
+      'name': 'Bread',
+      'category': 'Bakery',
+      'price': 1.89,
+      'quantity': 40,
+      'imageUrl': 'https://example.com/bread.jpg',
+    },
+    {
+      'id': 5,
+      'name': 'Chicken Breast',
+      'category': 'Meat',
+      'price': 4.99,
+      'quantity': 20,
+      'imageUrl': 'https://example.com/chicken.jpg',
+    },
+    {
+      'id': 6,
+      'name': 'Carrot',
+      'category': 'Vegetables',
+      'price': 0.59,
+      'quantity': 60,
+      'imageUrl': 'https://example.com/carrot.jpg',
+    },
+    {
+      'id': 7,
+      'name': 'Eggs',
+      'category': 'Dairy',
+      'price': 1.29,
+      'quantity': 50,
+      'imageUrl': 'https://example.com/eggs.jpg',
+    },
+    {
+      'id': 8,
+      'name': 'Cereal',
+      'category': 'Breakfast',
+      'price': 3.99,
+      'quantity': 25,
+      'imageUrl': 'https://example.com/cereal.jpg',
+    },
+    {
+      'id': 9,
+      'name': 'Pasta',
+      'category': 'Pantry',
+      'price': 1.49,
+      'quantity': 35,
+      'imageUrl': 'https://example.com/pasta.jpg',
+    },
+    {
+      'id': 10,
+      'name': 'Yogurt',
+      'category': 'Dairy',
+      'price': 0.99,
+      'quantity': 45,
+      'imageUrl': 'https://example.com/yogurt.jpg',
+    },
+  ];
+}
