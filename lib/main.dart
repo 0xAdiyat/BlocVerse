@@ -18,13 +18,14 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pinkAccent),
+        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff01D2B8)),
         useMaterial3: true,
         primaryColor: Colors.white,
         appBarTheme: const AppBarTheme(
-          color: Colors.pinkAccent,
+          color: Color(0xff01D2B8),
           foregroundColor: Colors.white,
-          titleTextStyle: TextStyle(fontWeight: FontWeight.w500, fontSize: 26),
+          centerTitle: false,
+          titleTextStyle: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
         ),
       ),
       home: const Home(),
