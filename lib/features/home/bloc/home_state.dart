@@ -14,10 +14,18 @@ class HomeInitial extends HomeState {}
 class HomeLoadingState extends HomeState {}
 
 // State representing a successful data load on the Home screen
-class HomeLoadedSuccessState extends HomeState {}
+class HomeLoadedSuccessState extends HomeState {
+  final List<ProductDataModel> products;
+
+  HomeLoadedSuccessState({required this.products});
+}
 
 // State representing an error condition on the Home screen
-class HomeErrorState extends HomeState {}
+class HomeErrorState extends HomeState {
+  final String error;
+
+  HomeErrorState({required this.error});
+}
 
 // Action state triggered when navigating to the Cart page from the Home screen
 class HomeNavigateToCartPageActionState extends HomeActionState {}
