@@ -2,18 +2,19 @@ import 'package:bloc_verse/features/home/bloc/home_bloc.dart';
 import 'package:bloc_verse/features/home/models/home_product_data_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class ProductTileWidget extends StatelessWidget {
   final ProductDataModel productData;
   final Color backgroundColor;
   final HomeBloc homeBloc;
 
-  const ProductTileWidget(
-      {Key? key,
-      required this.productData,
-      required this.backgroundColor,
-      required this.homeBloc})
-      : super(key: key);
+  const ProductTileWidget({
+    Key? key,
+    required this.productData,
+    required this.backgroundColor,
+    required this.homeBloc,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -49,28 +50,28 @@ class ProductTileWidget extends StatelessWidget {
                           image: NetworkImage(productData.imageUrl),
                           fit: BoxFit.cover),
                     ),
-                    child: Text(
-                      "${productData.quantity}x",
-                      style: const TextStyle(
-                          fontSize: 18, fontWeight: FontWeight.w500),
-                    ),
+                    child: Text("${productData.quantity}x",
+                        style: GoogleFonts.lobster(
+                            fontSize: 26,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white)),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          productData.name,
-                          style: const TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
-                        ),
+                        Text(productData.name,
+                            style: GoogleFonts.vt323(
+                                fontSize: 26,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black)),
                         const SizedBox(
                           height: 3,
                         ),
                         Text(
                           productData.description,
-                          style: const TextStyle(fontSize: 14),
+                          style: TextStyle(fontSize: 16, color: Colors.grey),
                         ),
                         const SizedBox(
                           height: 10,
@@ -81,29 +82,23 @@ class ProductTileWidget extends StatelessWidget {
                             Text(
                               "\$${productData.price}",
                               style: TextStyle(
-                                  color: Theme.of(context).iconTheme.color!,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.bold),
+                                  fontSize: 22,
+                                  fontWeight: FontWeight.bold,
+                                  color: Colors.black),
                             ),
                             Row(
                               children: [
                                 IconButton(
-                                    onPressed: () {
-                                      homeBloc.add(
-                                          HomeProductWishListButtonClickedEvent(
-                                              clickedProduct: productData));
-                                    },
-                                    icon: Icon(
-                                      CupertinoIcons.heart,
-                                      shadows: [
-                                        Shadow(
-                                            color: Theme.of(context)
-                                                .iconTheme
-                                                .color!,
-                                            blurRadius: 2,
-                                            offset: const Offset(0.5, 1))
-                                      ],
-                                    )),
+                                  onPressed: () {
+                                    homeBloc.add(
+                                        HomeProductWishListButtonClickedEvent(
+                                            clickedProduct: productData));
+                                  },
+                                  icon: Icon(
+                                    CupertinoIcons.heart,
+                                    color: Colors.pink,
+                                  ),
+                                ),
                                 IconButton(
                                   onPressed: () {
                                     homeBloc.add(HomeCartButtonClickedEvent(
@@ -111,14 +106,7 @@ class ProductTileWidget extends StatelessWidget {
                                   },
                                   icon: Icon(
                                     CupertinoIcons.cart,
-                                    shadows: [
-                                      Shadow(
-                                          color: Theme.of(context)
-                                              .iconTheme
-                                              .color!,
-                                          blurRadius: 2,
-                                          offset: const Offset(0.5, 1))
-                                    ],
+                                    color: Colors.blue,
                                   ),
                                 ),
                               ],

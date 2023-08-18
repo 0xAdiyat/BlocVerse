@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../widgets/retro_app_bar.dart';
 import '../../cart/ui/cart.dart';
 import '../bloc/home_bloc.dart';
 
@@ -23,12 +24,18 @@ class _HomeState extends State<Home> {
   }
 
   @override
+  void dispose() {
+    homeBloc.close();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     List<Color> tileColors = [
       Theme.of(context).cardColor, // Color for the first tile
-      Color(0xffc7ffdf),
-      Color(0xfff6e1b5),
-      Color(0xffebd2f4),
+      const Color(0xffc7ffdf),
+      const Color(0xfff6e1b5),
+      const Color(0xffebd2f4),
     ];
 
     return BlocConsumer<HomeBloc, HomeState>(
@@ -62,14 +69,14 @@ class _HomeState extends State<Home> {
           case HomeLoadedSuccessState:
             final productsData = state as HomeLoadedSuccessState;
             return Scaffold(
-              appBar: AppBar(
-                title: const Text("BlocVerse"),
+              appBar: RetroAppBar(
                 actions: [
                   IconButton(
-                      onPressed: () {
-                        homeBloc.add(HomeWishlistButtonNavigateEvent());
-                      },
-                      icon: const Icon(CupertinoIcons.heart)),
+                    onPressed: () {
+                      homeBloc.add(HomeWishlistButtonNavigateEvent());
+                    },
+                    icon: const Icon(CupertinoIcons.heart),
+                  ),
                   IconButton(
                     onPressed: () {
                       homeBloc.add(HomeCartButtonNavigateEvent());
@@ -77,6 +84,7 @@ class _HomeState extends State<Home> {
                     icon: const Icon(CupertinoIcons.cart),
                   ),
                 ],
+                title: "BlocVerse",
               ),
               body: ListView.builder(
                   physics: const BouncingScrollPhysics(),

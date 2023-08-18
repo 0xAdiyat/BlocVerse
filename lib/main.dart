@@ -20,11 +20,11 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.pinkAccent),
         useMaterial3: true,
-        iconTheme: IconThemeData(color: Color(0xffE8495F)),
+        iconTheme: const IconThemeData(color: Color(0xffE8495F)),
         cardColor: const Color(0xffFFF6F7),
         primaryColor: Colors.pinkAccent,
         appBarTheme: const AppBarTheme(
-          color: Colors.pinkAccent,
+          color: Color(0xffA2C2D5),
           foregroundColor: Colors.white,
           centerTitle: false,
           titleTextStyle: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
