@@ -1,4 +1,6 @@
-# bloc_verse
+![VintageVeggies_ui_bloc_verse](https://github.com/0xAdiyat/BlocVerse/assets/67780459/53d52783-ba7e-4103-a947-233f85920b15)
+
+#BlocVerse
 
 Navigating the World of Flutter Bloc
 
