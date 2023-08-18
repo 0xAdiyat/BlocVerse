@@ -32,3 +32,15 @@ class HomeNavigateToCartPageActionState extends HomeActionState {}
 
 // Action state triggered when navigating to the Wishlist page from the Home screen
 class HomeNavigateToWishlistPageActionState extends HomeActionState {}
+
+class HomeProductItemWishlistedActionState extends HomeActionState {
+  final String wishListedItemName;
+
+  HomeProductItemWishlistedActionState({required this.wishListedItemName});
+}
+
+class HomeProductItemAddedToCartActionState extends HomeActionState {
+  final String addedItemName;
+
+  HomeProductItemAddedToCartActionState({required this.addedItemName});
+}

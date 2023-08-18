@@ -1,7 +1,9 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
+import 'package:bloc_verse/data/cart_items_data.dart';
 import 'package:bloc_verse/data/grocery_data.dart';
+import 'package:bloc_verse/data/wishlist_items_data.dart';
 import 'package:flutter/foundation.dart';
 
 import '../models/home_product_data_model.dart';
@@ -19,7 +21,7 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
             .map((product) => ProductDataModel(
                 id: product['id'],
                 name: product['name'],
-                category: product['category'],
+                description: product['description'],
                 imageUrl: product['imageUrl'],
                 price: product['price'],
                 quantity: product['quantity']))
@@ -36,10 +38,14 @@ class HomeBloc extends Bloc<HomeEvent, HomeState> {
     });
 
     on<HomeProductWishListButtonClickedEvent>((event, emit) {
-      print("WishList Clicked");
+      wishlistItems.add(event.clickedProduct);
+      emit(HomeProductItemWishlistedActionState(
+          wishListedItemName: event.clickedProduct.name));
     });
     on<HomeCartButtonClickedEvent>((event, emit) {
-      print("Cart  Clicked");
+      cartItems.add(event.clickedProduct);
+      emit(HomeProductItemAddedToCartActionState(
+          addedItemName: event.clickedProduct.name));
     });
     on<HomeCartButtonNavigateEvent>((event, emit) {
       print("Cart Navigate Clicked");

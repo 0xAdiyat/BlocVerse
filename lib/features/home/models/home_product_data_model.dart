@@ -1,12 +1,13 @@
 class ProductDataModel {
   final int id;
-  final String name, category, imageUrl;
-  final double price, quantity;
+  final String name, description, imageUrl;
+  final double price;
+  final int quantity;
 
   ProductDataModel(
       {required this.id,
       required this.name,
-      required this.category,
+      required this.description,
       required this.imageUrl,
       required this.price,
       required this.quantity});

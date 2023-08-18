@@ -18,11 +18,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: const Color(0xff01D2B8)),
+        colorScheme: ColorScheme.fromSeed(seedColor: Colors.pinkAccent),
         useMaterial3: true,
-        primaryColor: Colors.white,
+        iconTheme: IconThemeData(color: Color(0xffE8495F)),
+        cardColor: const Color(0xffFFF6F7),
+        primaryColor: Colors.pinkAccent,
         appBarTheme: const AppBarTheme(
-          color: Color(0xff01D2B8),
+          color: Colors.pinkAccent,
           foregroundColor: Colors.white,
           centerTitle: false,
           titleTextStyle: TextStyle(fontWeight: FontWeight.w500, fontSize: 24),
