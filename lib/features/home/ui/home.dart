@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
+import '../../../utility/constants/colors.dart';
 import '../../../widgets/retro_app_bar.dart';
 import '../../cart/ui/cart.dart';
 import '../bloc/home_bloc.dart';
@@ -31,13 +32,6 @@ class _HomeState extends State<Home> {
 
   @override
   Widget build(BuildContext context) {
-    List<Color> tileColors = [
-      Theme.of(context).cardColor, // Color for the first tile
-      const Color(0xffc7ffdf),
-      const Color(0xfff6e1b5),
-      const Color(0xffebd2f4),
-    ];
-
     return BlocConsumer<HomeBloc, HomeState>(
       bloc: homeBloc,
       listenWhen: (previous, current) => current is HomeActionState,
@@ -84,7 +78,7 @@ class _HomeState extends State<Home> {
                     icon: const Icon(CupertinoIcons.cart),
                   ),
                 ],
-                title: "BlocVerse",
+                title: "VintageVeggies",
               ),
               body: ListView.builder(
                   physics: const BouncingScrollPhysics(),
@@ -95,7 +89,7 @@ class _HomeState extends State<Home> {
                           productData: productsData.products[index],
                           backgroundColor:
                               tileColors[index % tileColors.length],
-                          homeBloc: homeBloc,
+                          customBloc: homeBloc,
                         ),
                       )),
             );
@@ -108,7 +102,6 @@ class _HomeState extends State<Home> {
                 ),
               ),
             );
-            break;
           default:
             return const SizedBox();
         }

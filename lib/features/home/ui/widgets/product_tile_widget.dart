@@ -1,3 +1,4 @@
+import 'package:bloc/bloc.dart';
 import 'package:bloc_verse/features/home/bloc/home_bloc.dart';
 import 'package:bloc_verse/features/home/models/home_product_data_model.dart';
 import 'package:flutter/cupertino.dart';
@@ -7,13 +8,12 @@ import 'package:google_fonts/google_fonts.dart';
 class ProductTileWidget extends StatelessWidget {
   final ProductDataModel productData;
   final Color backgroundColor;
-  final HomeBloc homeBloc;
-
+  final Bloc customBloc;
   const ProductTileWidget({
     Key? key,
     required this.productData,
     required this.backgroundColor,
-    required this.homeBloc,
+    required this.customBloc,
   }) : super(key: key);
 
   @override
@@ -71,7 +71,8 @@ class ProductTileWidget extends StatelessWidget {
                         ),
                         Text(
                           productData.description,
-                          style: TextStyle(fontSize: 16, color: Colors.grey),
+                          style:
+                              const TextStyle(fontSize: 16, color: Colors.grey),
                         ),
                         const SizedBox(
                           height: 10,
@@ -81,7 +82,7 @@ class ProductTileWidget extends StatelessWidget {
                           children: [
                             Text(
                               "\$${productData.price}",
-                              style: TextStyle(
+                              style: const TextStyle(
                                   fontSize: 22,
                                   fontWeight: FontWeight.bold,
                                   color: Colors.black),
@@ -90,21 +91,21 @@ class ProductTileWidget extends StatelessWidget {
                               children: [
                                 IconButton(
                                   onPressed: () {
-                                    homeBloc.add(
+                                    customBloc.add(
                                         HomeProductWishListButtonClickedEvent(
                                             clickedProduct: productData));
                                   },
-                                  icon: Icon(
+                                  icon: const Icon(
                                     CupertinoIcons.heart,
                                     color: Colors.pink,
                                   ),
                                 ),
                                 IconButton(
                                   onPressed: () {
-                                    homeBloc.add(HomeCartButtonClickedEvent(
+                                    customBloc.add(HomeCartButtonClickedEvent(
                                         clickedProduct: productData));
                                   },
-                                  icon: Icon(
+                                  icon: const Icon(
                                     CupertinoIcons.cart,
                                     color: Colors.blue,
                                   ),

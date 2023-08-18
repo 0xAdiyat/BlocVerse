@@ -12,12 +12,12 @@ class RetroAppBar extends StatelessWidget implements PreferredSizeWidget {
   }) : super(key: key);
 
   @override
-  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 45);
+  Size get preferredSize => const Size.fromHeight(kToolbarHeight + 55);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 20),
+      margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 30),
       alignment: Alignment.center,
       decoration: BoxDecoration(
           color: const Color(0xffA2C2D5),
