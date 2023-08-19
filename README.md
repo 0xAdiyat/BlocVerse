@@ -1,4 +1,5 @@
-![VintageVeggies_ui_bloc_verse](https://github.com/0xAdiyat/BlocVerse/assets/67780459/53d52783-ba7e-4103-a947-233f85920b15)
+![VintageVeggies_ui_bloc_verse](https://github.com/0xAdiyat/BlocVerse/assets/67780459/ac48cbfd-b9e0-4d8a-b55d-40378dd5b860)
+
 
 # BlocVerse
 
