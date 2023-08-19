@@ -1,5 +1,5 @@
 import 'package:badges/badges.dart' as badges;
-import 'package:bloc_verse/flutter_vintage_veggies/features/home/ui/widgets/product_tile_widget.dart';
+import 'package:bloc_verse/flutter_vintage_veggies/widgets/product_tile_widget.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -48,13 +48,12 @@ class _HomeState extends State<Home> {
           ),
           BlocBuilder<CartBloc, CartState>(
             bloc: cartBloc,
-            buildWhen: (previous, current) => current is CartActionState,
             builder: (context, state) {
               print(state.runtimeType);
               if (state.runtimeType == CartLoadedSuccessState) {
                 var cartedItems = state as CartLoadedSuccessState;
                 return Padding(
-                  padding: const EdgeInsets.only(right: 15),
+                  padding: const EdgeInsets.only(right: 20),
                   child: GestureDetector(
                     onTap: () => homeBloc.add(HomeCartButtonNavigateEvent()),
                     child: badges.Badge(

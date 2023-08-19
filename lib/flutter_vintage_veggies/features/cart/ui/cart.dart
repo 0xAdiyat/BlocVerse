@@ -3,8 +3,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 import '../../../utility/constants/colors.dart';
+import '../../../widgets/product_tile_widget.dart';
 import '../../../widgets/retro_app_bar.dart';
-import '../../home/ui/widgets/product_tile_widget.dart';
 import '../bloc/cart_bloc.dart';
 
 class Cart extends StatefulWidget {

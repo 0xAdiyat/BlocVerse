@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
-import 'flutter_vintage_veggies/features/home/ui/home.dart';
+import 'features/home/ui/home.dart';
 
 void main() {
   runApp(const MyApp());
