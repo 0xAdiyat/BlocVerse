@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:bloc/bloc.dart';
-import 'package:bloc_verse/data/cart_items_data.dart';
-import 'package:bloc_verse/data/grocery_data.dart';
-import 'package:bloc_verse/data/wishlist_items_data.dart';
 import 'package:flutter/foundation.dart';
 
+import '../../../data/cart_items_data.dart';
+import '../../../data/grocery_data.dart';
+import '../../../data/wishlist_items_data.dart';
 import '../models/home_product_data_model.dart';
 
 part 'home_event.dart';

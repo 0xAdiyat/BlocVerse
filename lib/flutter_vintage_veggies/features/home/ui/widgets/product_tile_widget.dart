@@ -1,9 +1,11 @@
 import 'package:bloc/bloc.dart';
-import 'package:bloc_verse/features/home/bloc/home_bloc.dart';
-import 'package:bloc_verse/features/home/models/home_product_data_model.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../../../cart/bloc/cart_bloc.dart';
+import '../../bloc/home_bloc.dart';
+import '../../models/home_product_data_model.dart';
 
 class ProductTileWidget extends StatelessWidget {
   final ProductDataModel productData;
@@ -18,6 +20,7 @@ class ProductTileWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    bool isCartBloc = customBloc.runtimeType == CartBloc;
     return Column(
       children: [
         Padding(
@@ -50,11 +53,26 @@ class ProductTileWidget extends StatelessWidget {
                           image: NetworkImage(productData.imageUrl),
                           fit: BoxFit.cover),
                     ),
-                    child: Text("${productData.quantity}x",
-                        style: GoogleFonts.lobster(
-                            fontSize: 26,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white)),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        Text("${productData.quantity}x",
+                            style: GoogleFonts.lobster(
+                                fontSize: 26,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.white)),
+                        if (isCartBloc)
+                          IconButton(
+                              onPressed: () {
+                                customBloc.add(CartRemoveProductEvent());
+                              },
+                              icon: Icon(
+                                CupertinoIcons.minus,
+                                color: Colors.white,
+                              ))
+                      ],
+                    ),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(12.0),
@@ -105,8 +123,10 @@ class ProductTileWidget extends StatelessWidget {
                                     customBloc.add(HomeCartButtonClickedEvent(
                                         clickedProduct: productData));
                                   },
-                                  icon: const Icon(
-                                    CupertinoIcons.cart,
+                                  icon: Icon(
+                                    isCartBloc
+                                        ? CupertinoIcons.cart_fill
+                                        : CupertinoIcons.cart,
                                     color: Colors.blue,
                                   ),
                                 ),

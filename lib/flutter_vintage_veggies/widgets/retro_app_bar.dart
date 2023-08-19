@@ -16,8 +16,10 @@ class RetroAppBar extends StatelessWidget implements PreferredSizeWidget {
 
   @override
   Widget build(BuildContext context) {
+    var statusBarHeight = MediaQuery.of(context).viewPadding.top;
     return Container(
-      margin: const EdgeInsets.only(left: 12.0, right: 12.0, top: 30),
+      margin:
+          EdgeInsets.only(left: 12.0, right: 12.0, top: statusBarHeight + 5),
       alignment: Alignment.center,
       decoration: BoxDecoration(
           color: const Color(0xffA2C2D5),

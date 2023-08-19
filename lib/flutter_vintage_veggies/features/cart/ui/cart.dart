@@ -1,10 +1,11 @@
-import 'package:bloc_verse/features/cart/bloc/cart_bloc.dart';
-import 'package:bloc_verse/widgets/retro_app_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 import '../../../utility/constants/colors.dart';
+import '../../../widgets/retro_app_bar.dart';
 import '../../home/ui/widgets/product_tile_widget.dart';
+import '../bloc/cart_bloc.dart';
 
 class Cart extends StatefulWidget {
   const Cart({super.key});
@@ -31,8 +32,27 @@ class _CartState extends State<Cart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: const RetroAppBar(
+      appBar: RetroAppBar(
         title: 'Cart',
+        actions: [
+          BlocBuilder<CartBloc, CartState>(
+            bloc: cartBloc,
+            buildWhen: (previous, current) => current is! CartActionState,
+            builder: (context, state) {
+              switch (state.runtimeType) {
+                case CartLoadedSuccessState:
+                  var cartData = state as CartLoadedSuccessState;
+                  return Padding(
+                    padding: const EdgeInsets.only(right: 20.0),
+                    child: Text(cartData.cartItems.length.toString(),
+                        style: GoogleFonts.lobster(fontSize: 24)),
+                  );
+                default:
+                  return const SizedBox();
+              }
+            },
+          )
+        ],
       ),
       body: BlocConsumer<CartBloc, CartState>(
           bloc: cartBloc,
@@ -70,7 +90,7 @@ class _CartState extends State<Cart> {
                   ),
                 );
               default:
-                return SizedBox();
+                return const SizedBox();
             }
           },
           listener: (context, state) {}),
