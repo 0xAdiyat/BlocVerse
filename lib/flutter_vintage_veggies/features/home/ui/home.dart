@@ -4,7 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../../../utility/constants/colors.dart';
+import '../../../utils/constants/colors.dart';
 import '../../../widgets/retro_app_bar.dart';
 import '../../cart/bloc/cart_bloc.dart';
 import '../../cart/ui/cart.dart';

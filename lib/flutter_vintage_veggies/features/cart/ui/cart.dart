@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import '../../../utility/constants/colors.dart';
+import '../../../utils/constants/colors.dart';
 import '../../../widgets/product_tile_widget.dart';
 import '../../../widgets/retro_app_bar.dart';
 import '../bloc/cart_bloc.dart';

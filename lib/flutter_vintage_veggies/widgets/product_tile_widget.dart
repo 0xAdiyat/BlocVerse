@@ -36,9 +36,9 @@ class ProductTileWidget extends StatelessWidget {
                 boxShadow: [
                   BoxShadow(
                       color: backgroundColor,
-                      offset: const Offset(12, 6),
+                      offset: const Offset(12, 12),
                       blurRadius: 2,
-                      spreadRadius: 5),
+                      spreadRadius: 0),
                 ],
                 borderRadius: BorderRadius.circular(10)),
             child: Column(
@@ -75,7 +75,7 @@ class ProductTileWidget extends StatelessWidget {
                             icon: const Icon(
                               CupertinoIcons.minus,
                               color: Colors.white,
-                            ))
+                            )),
                     ],
                   ),
                 ),

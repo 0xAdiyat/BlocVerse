@@ -29,10 +29,10 @@ class RetroAppBar extends StatelessWidget implements PreferredSizeWidget {
           ),
           boxShadow: [
             BoxShadow(
-              color: const Color(0xffA2C2D5).withOpacity(0.7),
-              blurRadius: 8.0,
-              offset: const Offset(0, 4),
-            ),
+                color: const Color(0xffA2C2D5).withOpacity(.6),
+                offset: const Offset(8, 8),
+                blurRadius: 10,
+                spreadRadius: 0),
           ],
           borderRadius: BorderRadius.circular(10)),
       child: ClipRRect(
