@@ -15,11 +15,15 @@ class TimerView extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.center,
         crossAxisAlignment: CrossAxisAlignment.center,
         children: <Widget>[
+          Spacer(),
           Padding(
-            padding: EdgeInsets.symmetric(vertical: 100.0),
+            padding: EdgeInsets.symmetric(vertical: 60.0),
             child: Center(child: TimerText()),
           ),
           TimerActions(),
+          Spacer(
+            flex: 2,
+          )
         ],
       ),
     );

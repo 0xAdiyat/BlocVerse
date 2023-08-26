@@ -8,10 +8,14 @@ class App extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Timer',
+      debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        useMaterial3: true,
         primaryColor: const Color.fromRGBO(109, 234, 255, 1),
+        floatingActionButtonTheme:
+            FloatingActionButtonThemeData(backgroundColor: Colors.black87),
         colorScheme: const ColorScheme.light(
-          secondary: Color.fromRGBO(72, 74, 126, 1),
+          secondary: Colors.black54,
         ),
       ),
       home: const TimerPage(),
