@@ -10,10 +10,11 @@ class App extends StatelessWidget {
       title: 'Flutter Timer',
       debugShowCheckedModeBanner: false,
       theme: ThemeData(
+        appBarTheme: const AppBarTheme(centerTitle: true),
         useMaterial3: true,
         primaryColor: const Color.fromRGBO(109, 234, 255, 1),
-        floatingActionButtonTheme:
-            FloatingActionButtonThemeData(backgroundColor: Colors.black87),
+        floatingActionButtonTheme: const FloatingActionButtonThemeData(
+            backgroundColor: Colors.black87),
         colorScheme: const ColorScheme.light(
           secondary: Colors.black54,
         ),
