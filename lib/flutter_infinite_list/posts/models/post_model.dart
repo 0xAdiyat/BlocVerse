@@ -7,6 +7,12 @@ final class Post extends Equatable {
   final String title;
   final String body;
 
+  factory Post.fromJson(Map<String, dynamic> json) => Post(
+        id: json["id"] as int,
+        title: json['title'] as String,
+        body: json['body'] as String,
+      );
+
   @override
   List<Object> get props => [id, title, body];
 }

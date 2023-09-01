@@ -25,7 +25,7 @@ class TimerActions extends StatelessWidget {
                 ],
               TimerRunInProgress() => [
                   FloatingActionButton(
-                    child: Icon(CupertinoIcons.pause_circle),
+                    child: const Icon(CupertinoIcons.pause_circle),
                     onPressed: () =>
                         context.read<TimerBloc>().add(const TimerPausedEvent()),
                   ),
